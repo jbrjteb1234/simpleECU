@@ -1,0 +1,41 @@
+.grid-container {
+    display: grid;
+    column-gap: 2%;
+    row-gap: 5%;
+    grid-template-areas:
+        "output output"
+        "fuel timing"
+        "loop turbo";
+    
+    grid-template-columns: 49% 49%;
+}
+
+.output{
+    grid-area: output;
+    background-color: black;
+}
+
+.fuel-panel {
+    grid-area: fuel;
+    background-color: black;
+}
+
+.timing-panel {
+    grid-area: timing;
+    background-color: black;
+}
+
+.loop-panel {
+    grid-area: loop;
+    background-color: black;
+}
+
+.turbo-panel {
+    grid-area: turbo;
+    background-color: black;
+}
+
+body {
+    margin: 10px;
+    padding: 0px;
+}
