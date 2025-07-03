@@ -12,7 +12,9 @@
 
 .output{
     grid-area: output;
-    background-color: black;
+    background-color: rgb(178, 178, 178);
+    display: flex;
+    flex-direction: row;
 }
 
 .fuel-panel {
