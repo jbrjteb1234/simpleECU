@@ -1,7 +1,8 @@
-.sensor-flex-container{
+.output-half-flex-container{
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding: 10px;
 }
 
 .sensor-output-row{
@@ -25,10 +26,4 @@
     font-weight: bold;
     font-size: 16px;
     width: 100%;
-}
-
-.engine-flex-container{
-    display: flex;
-    flex-direction: column;
-    width: 50%
 }
