@@ -23,7 +23,7 @@ function buildSensors(sensorSections){
 
     function produceSensor({id, label}){
         const row = document.createElement('div');
-        row.className = 'sensor-row';
+        row.className = 'sensor-output-row';
 
         const name = document.createElement('span');
         name.className = 'sensor-name';
@@ -40,7 +40,8 @@ function buildSensors(sensorSections){
 
     function produceTitle({section, sensors = []}){
 
-        const title = document.createElement('sensor-title');
+        const title = document.createElement('h3');
+        title.className = 'sensor-title';
         title.textContent = section;
 
         frag.appendChild(title);

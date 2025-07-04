@@ -8,6 +8,7 @@
         "loop turbo";
     
     grid-template-columns: 49% 49%;
+    width: 100%;
 }
 
 .output{

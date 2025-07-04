@@ -12,13 +12,13 @@
 
 .sensor-name {
     font-size: 12px;
-    width: 50%;
+    width: 50%
 }
 
 .sensor-reading {
     font-size: 12px;
     text-align: right;
-    width: 50%
+    width: 50%;
 }
 
 .sensor-title {
