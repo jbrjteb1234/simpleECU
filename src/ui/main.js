@@ -2,8 +2,8 @@ const sensorSections = [
   {
     section: 'Engine & Timing',
     sensors: [
-      { id: 'rpm',       label: 'Revolutions Per Minute (RPM)' },
-      { id: 'cmpPhase',  label: 'Camshaft Phase Offset'       },
+      { id: 'rpm',       label: 'Revolutions Per Minute (RPM)'},
+      { id: 'cmpPhase',  label: 'Camshaft Phase Offset',      metric: '*'},
       { id: 'knockLvl',  label: 'Knock Level'                 }
     ]
   }
@@ -21,7 +21,7 @@ function buildSensors(sensorSections){
 
     const frag = document.createDocumentFragment();
 
-    function produceSensor({id, label}){
+    function produceSensor({id, label, metric=''}){
         const row = document.createElement('div');
         row.className = 'sensor-output-row';
 
@@ -32,7 +32,7 @@ function buildSensors(sensorSections){
         const reading = document.createElement('span');
         reading.className = 'sensor-reading';
         reading.id = id;
-        reading.textContent = '--';
+        reading.textContent = '--'+metric;
 
         row.append(name, reading);
         frag.appendChild(row);
