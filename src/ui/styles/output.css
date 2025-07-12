@@ -18,18 +18,18 @@
 
 .sensor-label {
     font-size: 12px;
-    width: 60%;
+    width: 40%;
 }
 
 .sensor-reading {
     font-size: 12px;
     text-align: right;
-    width: 10%;
+    width: 20%;
 }
 
 .sensor-metric {
     font-size: 12px;
-    width: 10%;
+    width: 20%;
 }
 
 .sensor-title {
