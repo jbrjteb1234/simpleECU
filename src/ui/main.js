@@ -32,9 +32,13 @@ function buildSensors(sensorSections){
         const reading = document.createElement('span');
         reading.className = 'sensor-reading';
         reading.id = id;
-        reading.textContent = '--'+metric;
+        reading.textContent = '--';
 
-        row.append(name, reading);
+        const metricElement = document.createElement('span');
+        metricElement.className = 'sensor-metric';
+        metricElement.textContent = metric;
+
+        row.append(name, reading, metricElement);
         frag.appendChild(row);
     }
 

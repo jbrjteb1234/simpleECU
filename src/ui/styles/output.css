@@ -19,7 +19,12 @@
 .sensor-reading {
     font-size: 12px;
     text-align: right;
-    width: 50%;
+    width: 45%;
+}
+
+.sensor-metric {
+    font-size: 12px;
+    width: 5%;
 }
 
 .sensor-title {
