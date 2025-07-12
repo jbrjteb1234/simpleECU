@@ -2,7 +2,7 @@ const sensorSections = [
   {
     section: 'Engine & Timing',
     sensors: [
-      { id: 'rpm',       label: 'Revolutions Per Minute (RPM)'},
+      { id: 'rpm',       label: 'Revolutions Per Minute'},
       { id: 'cmpPhase',  label: 'Camshaft Phase Offset',      metric: '*'},
       { id: 'knockLvl',  label: 'Knock Level'                 }
     ]
@@ -25,20 +25,24 @@ function buildSensors(sensorSections){
         const row = document.createElement('div');
         row.className = 'sensor-output-row';
 
-        const name = document.createElement('span');
-        name.className = 'sensor-name';
-        name.textContent = label;
+        const idElement = document.createElement('span');
+        idElement.className = 'sensor-id';
+        idElement.textContent = id;
 
-        const reading = document.createElement('span');
-        reading.className = 'sensor-reading';
-        reading.id = id;
-        reading.textContent = '--';
+        const labelElement = document.createElement('span');
+        labelElement.className = 'sensor-label';
+        labelElement.textContent = label;
+
+        const readingElement = document.createElement('span');
+        readingElement.className = 'sensor-reading';
+        readingElement.id = id;
+        readingElement.textContent = '--';
 
         const metricElement = document.createElement('span');
         metricElement.className = 'sensor-metric';
         metricElement.textContent = metric;
 
-        row.append(name, reading, metricElement);
+        row.append(idElement, labelElement, readingElement, metricElement);
         frag.appendChild(row);
     }
 
