@@ -2,19 +2,56 @@ const sensorSections = [
   {
     section: 'Engine & Timing',
     sensors: [
-      { id: 'rpm',       label: 'Revolutions Per Minute'},
-      { id: 'cmpPhase',  label: 'Camshaft Phase Offset',      metric: '*'},
-      { id: 'knockLvl',  label: 'Knock Level'                 }
+      { id: 'rpm',          label: 'Revolutions Per Minute',    metric: 'rpm'},
+      { id: 'cmpPhase',     label: 'Camshaft Phase Offset',     metric: '° crank'},
+      { id: 'knockLvl',     label: 'Knock Level',               metric: 'dB'},
+      { id: 'sparkAdv',     label: 'Spark Advance',             metric: '° BTDC'}
     ]
-  }
-
-  /*{
-    section: 'Air-Flow'
   },
 
   {
-    section: 'Charge Management'
-  }*/
+    section: 'Air-Flow',
+    sensors: [
+        { id: 'maf',        label: 'Mass Air Flow',             metric: 'g/s'},
+        { id: 'map',        label: 'Manifold Absolute Pressure',metric: 'kPa'},
+        { id: 'baro',       label: 'Barometric Pressure',       metric: 'kPa'},
+        { id: 'iat',        label: 'Intake Air Temperature',    metric: '°C'},
+        { id: 'cat',        label: 'Charge-Air Temperature',    metric: '°C'},
+        { id: 'boost',      label: 'Boost Pressure',            metric: 'psi'},
+        { id: 'turboSpd',   label: 'Turbocharger Speed',        metric: 'krpm'},
+        { id: 'wgPos',      label: 'Waste-Gate Position',       metric: '% open'},
+    ]
+  },
+
+  {
+    section: 'Fuel',
+    sensors: [
+        { id: 'fuelRail',   label: 'Fuel Rail Pressure',                    metric: 'kPa'},
+        { id: 'lpfp',       label: 'Low-Side Fuel Pressure',                metric: 'kPa'},
+        { id: 'fuelTemp',   label: 'Fuel Temperature',                      metric: '°C'},
+        { id: 'lambda',     label: 'Lambda: Air-Fuel Equivalence Ratio',    metric: ''},
+        { id: 'afr',        label: 'Air-Fuel Ratio',                        metric: ''},
+        { id: 'ethPct',     label: 'Ethanol Content',                       metric: '%'},
+    ]
+  },
+
+  {
+    section: 'Engine & Exhaust Temperatures',
+    sensors: [
+        { id: 'ect', label: 'Engine Coolant Temperature',   metric: '°C'},
+        { id: 'oilT', label: 'Oil Temperature',             metric: '°C'},
+        { id: 'egt', label: 'Exhaust Gas Temperature',      metric: '°C'},
+        { id: 'catT', label: 'Catalyst Temperature',        metric: '°C'},
+    ]
+  },
+
+  {
+    section: 'Miscellaneous',
+    sensors: [
+        {id:'tps', label:'Throttle Position', metric:'%'},
+        {id:'oilPress', label:'Oil Pressure', metric:'kPa'},
+    ]
+  }
 ];
 
 function buildSensors(sensorSections){
