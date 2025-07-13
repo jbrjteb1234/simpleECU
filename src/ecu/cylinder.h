@@ -36,9 +36,13 @@ typedef struct {
 
     float knock_dB;
 
+    fuelInjector injector;
+
 } cylinder;
 
 typedef struct {
-
-} injector;
+    float staticFlow_cc;
+    float fuelDensity;
+    float deadTime_ms;
+} fuelInjector;
 
