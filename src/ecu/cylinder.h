@@ -1,19 +1,17 @@
+#include <stdint.h>
+
 typedef struct {
     const float bore_mm;
     const float rodLength_mm;
     const float pistonHeight_mm;
     const float domeVolume_cc;
-    const int crankOffset_deg;
-
-    const float intakeValveDia_mm;
-    const float exhaustValveDia_mm;
-    const float intakeValveLiftMax_mm;
-    const float exhaustValveLiftMax_mm;
-
 } cylinderSpec;
 
 typedef struct {
-    const cylinderSpec spec;
+    cylinderSpec* spec;
+
+    //crank offset
+    int crankOffset_deg;
 
     //physical data
     float fromTDC_deg;
@@ -45,4 +43,6 @@ typedef struct {
     float fuelDensity;
     float deadTime_ms;
 } fuelInjector;
+
+void initCylinders(cylinderSpec*, uint8_t);
 
