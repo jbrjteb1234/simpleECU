@@ -4,7 +4,8 @@ typedef struct {
     const float bore_mm;
     const float rodLength_mm;
     const float pistonHeight_mm;
-    const float domeVolume_cc;
+    const float strokeLength_mm;
+    const float clearanceVolume_cc;
 } cylinderSpec;
 
 typedef struct {
@@ -44,5 +45,7 @@ typedef struct {
     float deadTime_ms;
 } fuelInjector;
 
-void initCylinders(cylinderSpec*, uint8_t);
+cylinder* initCylinders(cylinderSpec* spec, uint8_t numCylinders);
+
+void setInitialOffset(cylinder* cyl, uint8_t order);
 
