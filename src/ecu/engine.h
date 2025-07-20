@@ -1,9 +1,19 @@
 #include "cylinder.h"
 #include <stdint.h>
 
+typedef struct {
+    float volume_L;           
+    float pressure_kPa;
+    float temp_K;
+    float massAir_kg;
+} Manifold;
+
 typedef struct{
     cylinder* cylinders;
     
+    Manifold intake;
+    Manifold exhaust;
+
     const float crankOffset_mm;
     const float fuelRailPressure_kPa;
 
