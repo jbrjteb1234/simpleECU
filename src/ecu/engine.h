@@ -1,8 +1,9 @@
 #include "cylinder.h"
 #include <stdint.h>
 #include "models/combustion.h"
-#include "friction.h"
-#include "valveFlow.h"
+#include "models/friction.h"
+#include "models/valveFlow.h"
+#include "models/environment.h"
 
 typedef struct {
     float volume_L;           
@@ -12,7 +13,11 @@ typedef struct {
 } manifold;
 
 typedef struct{
+
+    cylinderSpec* spec;
+    fuelInjector* injector;
     cylinder* cylinders;
+    camshaftLobe* lobe;
     
     manifold intake;
     manifold exhaust;
@@ -36,5 +41,5 @@ typedef enum {
     INLINE6,
 } engineLayout;
 
-engine* initEngine(engineLayout layout, cylinderSpec* spec);
+engine* initEngine(engineLayout layout, cylinderSpec* spec, fuelInjector* injector, camshaftLobe* lobe);
 

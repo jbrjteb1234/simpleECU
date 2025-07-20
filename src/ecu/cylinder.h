@@ -19,7 +19,6 @@ typedef struct{
     float open_deg;
     float close_deg;
     float maxLift_mm;
-    float camshaftOffset_deg;
 } camshaftLobe;
 
 typedef struct {
@@ -27,6 +26,9 @@ typedef struct {
 
     //crank offset
     uint16_t crankOffset_deg;
+
+    //camshaft offset
+    uint16_t camshaftOffset_deg;
 
     //physical data
     float fromTDC_deg;
@@ -49,14 +51,12 @@ typedef struct {
 
     float knock_dB;
 
-    fuelInjector injector;
-    camshaftLobe lobe;
+    fuelInjector* injector;
+    camshaftLobe* lobe;
 
 } cylinder;
 
-cylinder* initCylinders(cylinderSpec*, uint16_t);
+cylinder* initCylinders(cylinderSpec*, fuelInjector*, camshaftLobe*, uint16_t);
 
-void setCrankOffset(cylinder*, uint16_t);
-
-void setLobeOffset(camshaftLobe*, uint16_t);
+void setCamCrankOffset(cylinder*, uint16_t, uint16_t);
 
