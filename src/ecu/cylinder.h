@@ -36,6 +36,7 @@ typedef struct {
     float knock_dB;
 
     fuelInjector injector;
+    camshaftLobe lobe;
 
 } cylinder;
 
@@ -45,7 +46,16 @@ typedef struct {
     float deadTime_ms;
 } fuelInjector;
 
-cylinder* initCylinders(cylinderSpec* spec, uint8_t numCylinders);
+typedef struct{
+    float open_deg;
+    float close_deg;
+    float maxLift_mm;
+    float camshaftOffset_deg;
+} camshaftLobe;
 
-void setInitialOffset(cylinder* cyl, uint8_t order);
+cylinder* initCylinders(cylinderSpec*, uint16_t);
+
+void setCrankOffset(cylinder*, uint16_t);
+
+void setCamOffset(camshaftLobe*, uint16_t);
 
