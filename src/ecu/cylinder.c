@@ -8,7 +8,7 @@ void setLobeOffset(camshaftLobe* lobe, uint16_t offset){
     lobe->camshaftOffset_deg = (float)offset;
 }
 
-cylinder* initCylinders(cylinderSpec* spec, uint8_t numCylinders){
+cylinder* initCylinders(cylinderSpec* spec, uint16_t numCylinders){
     
     cylinder* newCylinders = (cylinder*)malloc(numCylinders * sizeof(*newCylinders));
 

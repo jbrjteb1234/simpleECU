@@ -10,6 +10,19 @@ typedef struct {
 } cylinderSpec;
 
 typedef struct {
+    float staticFlow_cc;
+    float fuelDensity;
+    float deadTime_ms;
+} fuelInjector;
+
+typedef struct{
+    float open_deg;
+    float close_deg;
+    float maxLift_mm;
+    float camshaftOffset_deg;
+} camshaftLobe;
+
+typedef struct {
     cylinderSpec* spec;
 
     //crank offset
@@ -40,19 +53,6 @@ typedef struct {
     camshaftLobe lobe;
 
 } cylinder;
-
-typedef struct {
-    float staticFlow_cc;
-    float fuelDensity;
-    float deadTime_ms;
-} fuelInjector;
-
-typedef struct{
-    float open_deg;
-    float close_deg;
-    float maxLift_mm;
-    float camshaftOffset_deg;
-} camshaftLobe;
 
 cylinder* initCylinders(cylinderSpec*, uint16_t);
 
