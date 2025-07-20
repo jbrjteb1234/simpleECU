@@ -18,6 +18,8 @@ typedef struct{
     const float fuelRailPressure_kPa;
 
     float crankAngle_deg;
+    float camAngle_deg;
+    float throttlePos_frac;
 
 } engine;
 
