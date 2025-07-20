@@ -1,18 +1,25 @@
 #include "cylinder.h"
 #include <stdint.h>
+#include "models/combustion.h"
+#include "friction.h"
+#include "valveFlow.h"
 
 typedef struct {
     float volume_L;           
     float pressure_kPa;
     float temp_K;
     float massAir_kg;
-} Manifold;
+} manifold;
 
 typedef struct{
     cylinder* cylinders;
     
-    Manifold intake;
-    Manifold exhaust;
+    manifold intake;
+    manifold exhaust;
+
+    combustion combustionModel;
+    friction frictionModel;
+    valveFlow intakeValveFlowModel, exhaustValveFlowModel;
 
     const float crankOffset_mm;
     const float fuelRailPressure_kPa;
