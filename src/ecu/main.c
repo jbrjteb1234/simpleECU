@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main(void){
+int main(void){
 
     cylinderSpec* spec = (cylinderSpec*) malloc( sizeof(*spec) );
 

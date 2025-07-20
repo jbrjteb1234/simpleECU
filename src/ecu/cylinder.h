@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdlib.h>
 
 typedef struct {
     const float bore_mm;
@@ -12,7 +13,7 @@ typedef struct {
     cylinderSpec* spec;
 
     //crank offset
-    int crankOffset_deg;
+    uint16_t crankOffset_deg;
 
     //physical data
     float fromTDC_deg;
@@ -57,5 +58,5 @@ cylinder* initCylinders(cylinderSpec*, uint16_t);
 
 void setCrankOffset(cylinder*, uint16_t);
 
-void setCamOffset(camshaftLobe*, uint16_t);
+void setLobeOffset(camshaftLobe*, uint16_t);
 
