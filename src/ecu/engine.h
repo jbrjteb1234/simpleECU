@@ -25,6 +25,8 @@ typedef struct{
     combustion combustionModel;
     friction frictionModel;
     valveFlow intakeValveFlowModel, exhaustValveFlowModel;
+    environment environmentModel;
+    fuel fuelModel;
 
     const float crankOffset_mm;
     const float fuelRailPressure_kPa;
@@ -32,6 +34,9 @@ typedef struct{
     float crankAngle_deg;
     float camAngle_deg;
     float throttlePos_frac;
+
+    float rpm;
+    float crankInertia_kgm2;
 
 } engine;
 
@@ -41,5 +46,5 @@ typedef enum {
     INLINE6,
 } engineLayout;
 
-engine* initEngine(engineLayout layout, cylinderSpec* spec, fuelInjector* injector, camshaftLobe* lobe);
+engine* initEngine(engineLayout layout, cylinderSpec* spec, fuelInjector* injector, camshaftLobe* lobe, combustion* combustionModel, friction* frictionModel,  valveFlow* intakeValveFlowModel, valveFlow* exhaustValveFlowModel, environment* environmentModel, fuel* fuelModel);
 
