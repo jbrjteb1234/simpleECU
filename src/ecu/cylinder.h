@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 typedef struct {
-    const float bore_mm;
-    const float rodLength_mm;
-    const float pistonHeight_mm;
-    const float strokeLength_mm;
-    const float clearanceVolume_cc;
+    float bore_mm;
+    float rodLength_mm;
+    float pistonHeight_mm;
+    float strokeLength_mm;
+    float clearanceVolume_cc;
 } cylinderSpec;
 
 typedef struct {
