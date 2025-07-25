@@ -6,7 +6,12 @@ engine* initEngine(engineLayout layout, cylinderSpec* spec, fuelInjector* inject
     newEngine->lobe = lobe;
     newEngine->injector = injector;
     newEngine->spec = spec;
-    
+    newEngine->combustionModel = *combustionModel;
+    newEngine->frictionModel = *frictionModel;
+    newEngine->intakeValveFlowModel = *intakeValveFlowModel;
+    newEngine->exhaustValveFlowModel = *exhaustValveFlowModel;
+    newEngine->environmentModel = *environmentModel;
+    newEngine->fuelModel = *fuelModel;    
 
     switch (layout){
     case INLINE4:
