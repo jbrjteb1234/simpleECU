@@ -13,14 +13,14 @@ typedef struct {
 } manifold;
 
 typedef struct{
-
-    cylinderSpec* spec;
-    fuelInjector* injector;
     cylinder* cylinders;
-    camshaftLobe* lobe;
+    cylinderSpec spec;
     
     manifold intake;
     manifold exhaust;
+
+    fuelInjector injector;
+    camshaftLobe lobe;
 
     combustion combustionModel;
     friction frictionModel;

@@ -3,9 +3,11 @@
 engine* initEngine(engineLayout layout, cylinderSpec* spec, fuelInjector* injector, camshaftLobe* lobe, combustion* combustionModel, friction* frictionModel,  valveFlow* intakeValveFlowModel, valveFlow* exhaustValveFlowModel, environment* environmentModel, fuel* fuelModel){
 
     engine* newEngine = (engine*)malloc(sizeof(engine));
-    newEngine->lobe = lobe;
-    newEngine->injector = injector;
-    newEngine->spec = spec;
+
+    newEngine->spec = *spec;
+
+    newEngine->injector = *injector;
+    newEngine->lobe = *lobe;
     newEngine->combustionModel = *combustionModel;
     newEngine->frictionModel = *frictionModel;
     newEngine->intakeValveFlowModel = *intakeValveFlowModel;
